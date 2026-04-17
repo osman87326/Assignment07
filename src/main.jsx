@@ -1,10 +1,17 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+import { RouterProvider } from "react-router/dom";
+import { router } from "./route/Routes";
+import TimelineProvider from './components/context/TimelineProvider';
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <TimelineProvider> 
+          <RouterProvider router={router} />,
+    </TimelineProvider>
+      
   </StrictMode>,
 )
+ 
